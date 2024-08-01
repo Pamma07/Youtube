@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Rectangle</title>
+    <style>
+        #test, #myCanvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+        #test {
+            width: 100px;
+            height: 100px;
+        }
+        #myCanvas {
+            width: 500px; /* Set canvas dimensions as needed */
+            height: 300px;
+        }
+    </style>
+    <script type="text/javascript">
+        function drawShape() {
+            var canvas = document.getElementById("myCanvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                var img = new Image();
+                img.src="C:\Users\nirup\vs code\into-to-html\Graph.jpg"
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0);
+                    ctx.beginPath();
+                    ctx.moveTo(30, 96);
+                    ctx.lineTo(70, 66);
+                    ctx.lineTo(103, 76);
+                    ctx.lineTo(170, 15);
+                    ctx.closePath();
+                    ctx.stroke();
+                };
+            } else {
+                alert("Your browser doesn't support canvas.");
+            }
+        }
+    </script>
+</head>
+<body onload="drawShape()">
+    <canvas id="test"></canvas>
+    <canvas id="myCanvas"></canvas>
+</body>
+</html>

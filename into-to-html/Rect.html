@@ -1,0 +1,28 @@
+<html>
+<head><title>Drawing Rectangle</title>
+<style>
+#test{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+</style>
+<script type="text/javascript">
+function drawShape() {
+ var canvas = document.getElementById("myCanvas");
+ if (canvas.getContext) {
+ var ctx=canvas.getContext("2d");
+ ctx.fillRect(25, 25, 100, 100);
+ ctx.clearRect(45, 45, 60, 60);
+ ctx.strokeRect(50, 50, 50, 50);
+ }else {
+    alert("Your browser doeson't support canvas.");
+ }
+}
+</script>
+</head>
+<body onload="drawShape()">
+<canvas id="test"></canvas>
+<canvas id="myCanvas"></canvas>
+</body>
+</html>
